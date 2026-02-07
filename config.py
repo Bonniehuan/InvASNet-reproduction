@@ -29,7 +29,7 @@ lamda_reconstruction = 5
 lamda_guide = 1
 lamda_low_frequency = 1
 
-batch_size = 2
+batch_size = 1
 batchsize_val = 1
 shuffle_val = False
 val_freq = 1
@@ -56,3 +56,4 @@ progress_bar = False
 live_visualization = False
 loss_display_cutoff = 2.0
 loss_names = ["L", "lr"]
+

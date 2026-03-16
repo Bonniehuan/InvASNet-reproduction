@@ -11,14 +11,14 @@ checkpoint_on_error = True
 
 # ---- audio basic ----
 channels_in = 1               # mono
-segment_length = 16384     # �A�ثe��� pipeline �Ϊ�����
+segment_length = 65536     # �A�ثe��� pipeline �Ϊ�����
 host_sr = 44100
 secret_sr = 16000
 
 # ---- training hyperparams ----
 log10_lr = -4.5
 lr = 10 ** log10_lr
-epochs = 5
+epochs = 20
 
 betas = (0.5, 0.999)
 weight_decay = 1e-5

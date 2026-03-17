@@ -11,7 +11,7 @@ checkpoint_on_error = True
 
 # ---- audio basic ----
 channels_in = 1               # mono
-segment_length = 65536     # �A�ثe��� pipeline �Ϊ�����
+segment_length = 44160    # �A�ثe��� pipeline �Ϊ�����
 host_sr = 44100
 secret_sr = 16000
 
@@ -29,7 +29,7 @@ lamda_reconstruction = 5
 lamda_guide = 1
 lamda_low_frequency = 1
 
-batch_size = 1
+batch_size = 2
 batchsize_val = 1
 shuffle_val = False
 val_freq = 1

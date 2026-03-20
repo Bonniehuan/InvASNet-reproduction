@@ -64,7 +64,7 @@ class InvASNetAudioPairDataset(Dataset):
 
         # For real audio mode later, we will require 1-to-1 pairing by index.
         self.n_pairs = min(len(self.host_files), len(self.secret_files)) if not self.use_synth else 1000000
-        print("[DEBUG] host_files[0] =", self.host_files[0])
+        #print("[DEBUG] host_files[0] =", self.host_files[0])
 
     def __len__(self):
         return self.n_pairs
@@ -88,10 +88,10 @@ class InvASNetAudioPairDataset(Dataset):
     def __getitem__(self, idx):
         if self.use_synth:
             return self._make_synth()
-        print("[DEBUG] TRAIN_HOST_PATH =", c.TRAIN_HOST_PATH,
+        #print("[DEBUG] TRAIN_HOST_PATH =", c.TRAIN_HOST_PATH,
       "files =", os.listdir(c.TRAIN_HOST_PATH) if os.path.exists(c.TRAIN_HOST_PATH) else None)
 
-        print("[DEBUG] TRAIN_SECRET_PATH =", c.TRAIN_SECRET_PATH, "files =", os.listdir(c.TRAIN_SECRET_PATH) if os.path.exists(c.TRAIN_SECRET_PATH) else None)
+        #print("[DEBUG] TRAIN_SECRET_PATH =", c.TRAIN_SECRET_PATH, "files =", os.listdir(c.TRAIN_SECRET_PATH) if os.path.exists(c.TRAIN_SECRET_PATH) else None)
 
         # Real audio mode (to be implemented when you have wav files)
         # For now, we keep it strict so you notice if you accidentally think it's reading files.

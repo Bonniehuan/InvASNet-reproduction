@@ -211,7 +211,7 @@ def main():
 
                 # 4) backward (recover)
                 z_rand = gauss_noise_like(y_z)
-                y_rev_in = torch.cat([y_steg, z_rand], dim=1)
+                y_rev_in = torch.cat([y_steg, y_z], dim=1)
                 x_hat = net(y_rev_in, rev=True)
                 check_finite("x_hat", x_hat)
 

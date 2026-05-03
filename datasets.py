@@ -116,6 +116,11 @@ class InvASNetAudioPairDataset(Dataset):
             else:
                 start = torch.randint(0, T - target_len + 1, (1,)).item()
                 wav = wav[:, start:start + target_len]
+            max_val = wav.abs().max()
+            if max_val > 0:
+                wav = wav / max_val
+
+            wav = torch.clamp(wav, -1.0, 1.0)
             return wav
 
         # 在 __getitem__(self, idx) 裡用：
